@@ -22,7 +22,7 @@
 % x refers to the population size in 10,000s
 % y refers to the profit in $10,000s
 %
-
+%% By: Bilin Chen
 %% Initialization
 clear ; close all; clc
 
