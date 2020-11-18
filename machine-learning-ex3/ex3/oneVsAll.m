@@ -60,6 +60,7 @@ for c = 1:num_labels;
   disp(size(theta))
   pause;
 endfor
+
 %  all_theta(i, :) = theta
 
 
