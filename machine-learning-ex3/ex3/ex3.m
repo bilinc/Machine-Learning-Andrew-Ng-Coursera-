@@ -42,7 +42,7 @@ sel = X(rand_indices(1:100), :);
 displayData(sel);
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+% pause;
 
 %% ============ Part 2a: Vectorize Logistic Regression ============
 %  In this part of the exercise, you will reuse your logistic regression
@@ -59,6 +59,7 @@ theta_t = [-2; -1; 1; 2];
 X_t = [ones(5,1) reshape(1:15,5,3)/10];
 y_t = ([1;0;1;0;1] >= 0.5);
 lambda_t = 3;
+
 [J grad] = lrCostFunction(theta_t, X_t, y_t, lambda_t);
 
 fprintf('\nCost: %f\n', J);
@@ -69,7 +70,7 @@ fprintf('Expected gradients:\n');
 fprintf(' 0.146561\n -0.548558\n 0.724722\n 1.398003\n');
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+% pause;
 %% ============ Part 2b: One-vs-All Training ============
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
