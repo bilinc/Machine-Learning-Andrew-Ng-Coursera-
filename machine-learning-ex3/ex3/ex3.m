@@ -25,6 +25,7 @@ num_labels = 10;          % 10 labels, from 1 to 10
                           % (note that we have mapped "0" to label 10)
 
 %% =========== Part 1: Loading and Visualizing Data =============
+fprintf('=========== Part 1: Loading and Visualizing Data =============')
 %  We start the exercise by first loading and visualizing the dataset.
 %  You will be working with a dataset that contains handwritten digits.
 %
@@ -41,10 +42,11 @@ sel = X(rand_indices(1:100), :);
 
 displayData(sel);
 
-fprintf('Program paused. Press enter to continue.\n');
-% pause;
+##fprintf('Program paused. Press enter to continue.\n');
+##pause;
 
 %% ============ Part 2a: Vectorize Logistic Regression ============
+fprintf('\n============ Part 2a: Vectorize Logistic Regression ============')
 %  In this part of the exercise, you will reuse your logistic regression
 %  code from the last exercise. You task here is to make sure that your
 %  regularized logistic regression implementation is vectorized. After
@@ -69,20 +71,21 @@ fprintf(' %f \n', grad);
 fprintf('Expected gradients:\n');
 fprintf(' 0.146561\n -0.548558\n 0.724722\n 1.398003\n');
 
-fprintf('Program paused. Press enter to continue.\n');
-% pause;
+##fprintf('Program paused. Press enter to continue.\n');
+##pause;
 %% ============ Part 2b: One-vs-All Training ============
+fprintf('\n============ Part 2b: One-vs-All Training ============')
 fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
 lambda = 0.1;
 [all_theta] = oneVsAll(X, y, num_labels, lambda);
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+##fprintf('Program paused. Press enter to continue.\n');
+##pause;
 
 
 %% ================ Part 3: Predict for One-Vs-All ================
-
+fprintf('\n================ Part 3: Predict for One-Vs-All ================')
 pred = predictOneVsAll(all_theta, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
