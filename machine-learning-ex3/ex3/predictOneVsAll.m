@@ -3,7 +3,8 @@ function p = predictOneVsAll(all_theta, X)
 %are in the range 1..K, where K = size(all_theta, 1). 
 %  p = PREDICTONEVSALL(all_theta, X) will return a vector of predictions
 %  for each example in the matrix X. Note that X contains the examples in
-%  rows. all_theta is a matrix where the i-th row is a trained logistic
+%  rows. 
+%  all_theta is a matrix where the i-th row is a trained logistic
 %  regression theta vector for the i-th class. You should set p to a vector
 %  of values from 1..K (e.g., p = [1; 3; 1; 2] predicts classes 1, 3, 1, 2
 %  for 4 examples) 
@@ -29,9 +30,13 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
+gz = zeros(1:num_labels, 1);
 
-
-p = all_theta*X';
+gz = sigmoid(X*all_theta');
+% p = p';
+## v a [5000x1] vector containing the maximum value of each row in gz (highest probability value)
+## p a [5000x1] vector containing the index of the maximum value in gz (index represents the class since gz is [5000x10])
+[v p] = max(gz, [], 2);
 % p = max(p, [], 2);
 
 
