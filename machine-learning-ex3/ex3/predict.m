@@ -25,11 +25,11 @@ p = zeros(size(X, 1), 1);
 % Theta2 has size 10 x 26
 
 p = zeros(1:num_labels, 1);
-X = [ones(m,1) X];
+X = [ones(m,1) X];    % adding bias layer
 
 z2 = X*Theta1';
 a2 = sigmoid(z2);
-a2 = [ones(m,1), a2];
+a2 = [ones(m,1), a2]; % adding bias layer
 
 z3 = a2*Theta2';
 a3 = sigmoid(z3);
