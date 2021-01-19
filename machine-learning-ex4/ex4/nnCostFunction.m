@@ -39,7 +39,17 @@ Theta2_grad = zeros(size(Theta2));
 %         cost function computation is correct by verifying the cost
 %         computed in ex4.m
 
+a1 = [ones(1, m) ; X'];  % creating first activatio unit from X and adding the bias
+z2 = Theta1*a1;
 
+% This is calculated incorrectly, look up how to add the bias term
+a2 = [ones(1, m) ; sigmoid(z2)];
+z3 = Theta2*a2;
+
+a3 = [ones(1, m) ; sigmoid(z3)];
+
+
+pause;
 
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
