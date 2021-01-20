@@ -49,7 +49,7 @@ z3 = Theta2*a2;
 a3 = [ones(1, m) ; sigmoid(z3)];
 
 
-pause;
+
 
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
