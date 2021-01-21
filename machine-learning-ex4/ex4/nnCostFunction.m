@@ -38,19 +38,31 @@ Theta2_grad = zeros(size(Theta2));
 %         variable J. After implementing Part 1, you can verify that your
 %         cost function computation is correct by verifying the cost
 %         computed in ex4.m
+% Total number of possible labels
+K = 10;
 
-a1 = [ones(1, m) ; X'];  % creating first activatio unit from X and adding the bias
+% Create first activation unit. Also add the bias unit
+a1 = [ones(1, m) ; X'];  
+% Create variable z
 z2 = Theta1*a1;
 
-% This is calculated incorrectly, look up how to add the bias term
 a2 = [ones(1, m) ; sigmoid(z2)];
 z3 = Theta2*a2;
 
 a3 = [ones(1, m) ; sigmoid(z3)];
 
+h = a3;
 
 
+for i = 1:m;
+  for k = 1:K;
+    J += -y(i, :).*log(h(:, m)) - (1-y(i,:)).*log(1-h(:,m));
+  endfor
+endfor
 
+J = 1/m * J
+
+ppp = 0;
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
 %         the cost function with respect to Theta1 and Theta2 in Theta1_grad and
