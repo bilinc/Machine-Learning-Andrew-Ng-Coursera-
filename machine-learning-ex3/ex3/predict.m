@@ -28,8 +28,7 @@ p = zeros(1:num_labels, 1);
 X = [ones(m,1) X];    % adding bias layer
 
 z2 = X*Theta1';
-a2 = sigmoid(z2);
-a2 = [ones(m,1), a2]; % adding bias layer
+a2 = [ones(m,1), sigmoid(z2)]; % adding bias layer
 
 z3 = a2*Theta2';
 a3 = sigmoid(z3);
