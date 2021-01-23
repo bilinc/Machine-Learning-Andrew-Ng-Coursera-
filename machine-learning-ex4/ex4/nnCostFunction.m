@@ -56,11 +56,11 @@ h = a3;
 y_logical = zeros(K, 1);
 
 for i = 1:m;
-##  for k = 1:K;
-    y_logical(y(i)) = 1;
+
+  y_logical(y(i)) = 1;
     
-    J += sum(-y_logical.*log(h) - (1 - y_logical).*log(1-h));
-##  endfor
+  J += sum(-y_logical.*log(h) - (1 - y_logical).*log(1-h));
+
 endfor
 
 J = 1/m * J;
