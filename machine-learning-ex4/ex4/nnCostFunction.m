@@ -42,14 +42,14 @@ Theta2_grad = zeros(size(Theta2));
 K = num_labels;
 
 % Create first activation unit. Also add the bias unit
-a1 = [ones(1, m); X'];
-fprintf('')
+a1 = [ones(1,m); X'];
+disp('')
 fprintf('Size of a1:')
 size(a1)
 
 % Create variable z
 z2 = Theta1*a1;
-a2 = [ones(1, m); sigmoid(z2)];
+a2 = [ones(1,m); sigmoid(z2)];
 fprintf('Size of a2:')
 size(a2)
 
@@ -58,15 +58,17 @@ a3 = sigmoid(z3);
 
 h = a3;
 
-y_logical = zeros(K, 1);
+y_logical = zeros(K,1);
 
-##for i = 1:m;
+for i = 1:m;
 
-##  y_logical(y(i)) = 1;
+  y_logical(y(i)) = 1;
     
-##  J += sum(-y_logical.*log(h) - (1 - y_logical).*log(1-h));
-
-##endfor
+  J += -y_logical.*log(h) - (1 - y_logical).*log(1-h);
+  
+  y_logical = zeros(K,1);
+  
+endfor
 
 J = 1/m * J;
 
