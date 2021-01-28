@@ -41,40 +41,42 @@ Theta2_grad = zeros(size(Theta2));
 % Total number of possible labels
 K = num_labels;
 
-% Create first activation unit. Also add the bias unit
-a1 = [ones(1,m); X'];
-disp('')
-fprintf('Size of a1:')
-size(a1)
+% Input layer
+a1 = [ones(m,1) X];     % Create first activation unit. Also add the bias unit
+##size(a1)
 
-% Create variable z
-z2 = Theta1*a1;
-a2 = [ones(1,m); sigmoid(z2)];
-fprintf('Size of a2:')
-size(a2)
+% Hidden layer
+z2 = a1*Theta1';
+a2 = [ones(m,1) sigmoid(z2)];
 
-z3 = Theta2*a2;
+##size(a2)
+
+% Output layer
+z3 = a2*Theta2';
 a3 = sigmoid(z3);
 
 h = a3;
 
-y_logical = zeros(K,1);
+y_matrix = eye(num_labels)(y,:);  % create an eye matrix representing the labels in y
+                                  % then generates a new matrix by "indexing" using the values in the y matrix columnwise
+                                  % this creates a new matrix of another dimension
 
-for i = 1:m;
+J = 1/m * sum(sum(-y_matrix.*log(h)-(1-y_matrix).*log(1-h)));
 
-  y_logical(y(i)) = 1;
-    
-  J += -y_logical.*log(h) - (1 - y_logical).*log(1-h);
-  
-  y_logical = zeros(K,1);
-  
-endfor
 
-J = 1/m * J;
+##for i = 1:m;
+##
+##  y_logical(y(i)) = 1;
+##    
+##  J += -y_logical.*log(h) - (1 - y_logical).*log(1-h);
+##  
+##  y_logical = zeros(K,1);
+##  
+##endfor
+##
+##J = 1/m * J;
 
-ppp = 0;
 
-pause;
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
 %         the cost function with respect to Theta1 and Theta2 in Theta1_grad and
