@@ -63,19 +63,10 @@ y_matrix = eye(num_labels)(y,:);  % create an eye matrix representing the labels
 
 J = 1/m * sum(sum(-y_matrix.*log(h)-(1-y_matrix).*log(1-h)));
 
+% Regularized cost function
 
-##for i = 1:m;
-##
-##  y_logical(y(i)) = 1;
-##    
-##  J += -y_logical.*log(h) - (1 - y_logical).*log(1-h);
-##  
-##  y_logical = zeros(K,1);
-##  
-##endfor
-##
-##J = 1/m * J;
-
+% Don't regularize the bias unit
+J = J + lambda/(2*m) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2)));
 
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
