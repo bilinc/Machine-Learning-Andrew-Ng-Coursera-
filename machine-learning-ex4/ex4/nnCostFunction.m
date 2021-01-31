@@ -83,6 +83,18 @@ J = J + lambda/(2*m) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^
 %               over the training examples if you are implementing it for the 
 %               first time.
 
+% error vector for final layer L (L = 3)
+logical_y = [];
+
+for c = 1:num_labels;
+  lgl = (y==c);
+  logical_y = [logical_y (y==c)];
+end
+
+dL = a3 - logical_y;
+
+% error vector for all other layers (total L-1 layers)
+
 
 
 % Part 3: Implement regularization with the cost function and gradients.
