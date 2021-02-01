@@ -83,7 +83,7 @@ J = J + lambda/(2*m) * (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^
 %               over the training examples if you are implementing it for the 
 %               first time.
 
-% error vector for final layer L (L = 3)
+% Step 2: error vector for final layer L (L = 3)
 y_logical = [];
 
 for c = 1:num_labels;
@@ -95,11 +95,16 @@ dL = a3 - y_logical;
 
 % Step 3: error vector for all other layers (total L-1 layers)
 g_prime = sigmoidGradient(z2);
-d2 = dL*Theta2(:, 2:end).*g_prime;   % if you compute the sigmoid gradient of z2, 
-%                               then you must exclude the first column of Theta2 when you compute d2
+d2 = dL*Theta2(:, 2:end).*g_prime;    % if you compute the sigmoid gradient of z2, 
+%                                       then you must exclude the first column of Theta2 when you compute d2
 
 % Step 4: accumulate the gradient
 Delta2 = dL'*a2;
+Delta1 = d2'*a1;
+
+% Step 5: obtain the unregularized gradient
+Theta2_grad = 1/m * Delta2;
+Theta1_grad = 1/m * Delta1;
 
 
 % Part 3: Implement regularization with the cost function and gradients.
