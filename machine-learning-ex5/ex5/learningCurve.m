@@ -59,7 +59,6 @@ for i = 1:m
   error_train(i, 1) = J_train;
   
   % compute the CV error using the theta learned from the training set computed with lambda
-  
   J_val = linearRegCostFunction(Xval, yval, theta, 0);    % we want to validate the weights theta that we have learned
   error_val(i, 1) = J_val;
   
