@@ -17,8 +17,8 @@
 
 %% Initialization
 clear ; close all; clc
-
-%% =========== Part 1: Loading and Visualizing Data =============
+%%
+fprintf(' =========== Part 1: Loading and Visualizing Data ============= \n')
 %  We start the exercise by first loading and visualizing the dataset. 
 %  The following code will load the dataset into your environment and plot
 %  the data.
@@ -42,7 +42,8 @@ ylabel('Water flowing out of the dam (y)');
 fprintf('Program paused. Press enter to continue.\n');
 ##pause;
 
-%% =========== Part 2: Regularized Linear Regression Cost =============
+%%
+fprintf(' =========== Part 2: Regularized Linear Regression Cost ============= \n')
 %  You should now implement the cost function for regularized linear 
 %  regression. 
 %
@@ -54,9 +55,10 @@ fprintf(['Cost at theta = [1 ; 1]: %f '...
          '\n(this value should be about 303.993192)\n'], J);
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+##pause;
 
-%% =========== Part 3: Regularized Linear Regression Gradient =============
+%%
+fprintf(' =========== Part 3: Regularized Linear Regression Gradient ============= \n')
 %  You should now implement the gradient for regularized linear 
 %  regression.
 %
@@ -69,10 +71,10 @@ fprintf(['Gradient at theta = [1 ; 1]:  [%f; %f] '...
          grad(1), grad(2));
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+##pause;
 
-
-%% =========== Part 4: Train Linear Regression =============
+%%
+fprintf(' =========== Part 4: Train Linear Regression ============= \n')
 %  Once you have implemented the cost and gradient correctly, the
 %  trainLinearReg function will use your cost function to train 
 %  regularized linear regression.
@@ -94,10 +96,10 @@ plot(X, [ones(m, 1) X]*theta, '--', 'LineWidth', 2)
 hold off;
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
-
-
-%% =========== Part 5: Learning Curve for Linear Regression =============
+##pause;
+%
+%%
+fprintf(' =========== Part 5: Learning Curve for Linear Regression ============= \n')
 %  Next, you should implement the learningCurve function. 
 %
 %  Write Up Note: Since the model is underfitting the data, we expect to

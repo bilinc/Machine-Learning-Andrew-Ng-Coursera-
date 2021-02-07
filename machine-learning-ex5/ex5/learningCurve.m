@@ -53,7 +53,17 @@ error_val   = zeros(m, 1);
 
 % ---------------------- Sample Solution ----------------------
 
-
+for i = 1:m
+  theta = trainLinearReg(X(1:i, :), y(1:i), lambda);
+  J_train = linearRegCostFunction(X(1:i, :), y(1:i), theta, 0);
+  error_train(i, 1) = J_train;
+  
+  % compute the CV error using the theta learned from the training set computed with lambda
+  
+  J_val = linearRegCostFunction(Xval, yval, theta, 0);    % we want to validate the weights theta that we have learned
+  error_val(i, 1) = J_val;
+  
+endfor
 
 
 
