@@ -23,10 +23,38 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+best_error = 10000;   % initiate with some large value
+C = [0.01 0.03 0.1 0.3 1 3 10 30];
+sigma = [0.01 0.03 0.1 0.3 1 3 10 30];
 
+best_C = 0;
+best_sigma = 0;
 
+for c = C
+  for s = sigma
+    % train model with a combination of c and s
+    model= svmTrain(X, y, c, @(x1, x2) gaussianKernel(x1, x2, s));
+    % try the model on the cross validation set
+    predictions = svmPredict(model, Xval);
+    % calculate the error on the cross validation test
+    new_error = mean(double(predictions ~= yval))
+    
+    % find optimal values
+    if new_error < best_error
+      best_error = new_error
+      
+      best_C = c;
+      best_sigma = s;
+    endif
+    
+  endfor
+endfor
 
+% after calculating with the above, the best C and sigma combination is 
+% C = 1, sigma = 0.1
 
+C = best_C;
+sigma = best_sigma;
 
 
 % =========================================================================
