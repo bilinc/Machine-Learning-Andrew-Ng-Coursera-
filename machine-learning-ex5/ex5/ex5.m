@@ -17,8 +17,8 @@
 
 %% Initialization
 clear ; close all; clc
-
-%% =========== Part 1: Loading and Visualizing Data =============
+%%
+fprintf(' =========== Part 1: Loading and Visualizing Data ============= \n')
 %  We start the exercise by first loading and visualizing the dataset. 
 %  The following code will load the dataset into your environment and plot
 %  the data.
@@ -40,9 +40,10 @@ xlabel('Change in water level (x)');
 ylabel('Water flowing out of the dam (y)');
 
 fprintf('Program paused. Press enter to continue.\n');
-##pause;
+pause;
 
-%% =========== Part 2: Regularized Linear Regression Cost =============
+%%
+fprintf(' =========== Part 2: Regularized Linear Regression Cost ============= \n')
 %  You should now implement the cost function for regularized linear 
 %  regression. 
 %
@@ -56,7 +57,8 @@ fprintf(['Cost at theta = [1 ; 1]: %f '...
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =========== Part 3: Regularized Linear Regression Gradient =============
+%%
+fprintf(' =========== Part 3: Regularized Linear Regression Gradient ============= \n')
 %  You should now implement the gradient for regularized linear 
 %  regression.
 %
@@ -71,8 +73,8 @@ fprintf(['Gradient at theta = [1 ; 1]:  [%f; %f] '...
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-
-%% =========== Part 4: Train Linear Regression =============
+%%
+fprintf(' =========== Part 4: Train Linear Regression ============= \n')
 %  Once you have implemented the cost and gradient correctly, the
 %  trainLinearReg function will use your cost function to train 
 %  regularized linear regression.
@@ -96,8 +98,8 @@ hold off;
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-
-%% =========== Part 5: Learning Curve for Linear Regression =============
+%%
+fprintf(' =========== Part 5: Learning Curve for Linear Regression ============= \n')
 %  Next, you should implement the learningCurve function. 
 %
 %  Write Up Note: Since the model is underfitting the data, we expect to
@@ -125,7 +127,8 @@ end
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =========== Part 6: Feature Mapping for Polynomial Regression =============
+%%
+fprintf(' =========== Part 6: Feature Mapping for Polynomial Regression ============= \n')
 %  One solution to this is to use polynomial regression. You should now
 %  complete polyFeatures to map each example into its powers
 %
@@ -155,9 +158,8 @@ fprintf('  %f  \n', X_poly(1, :));
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
-
-
-%% =========== Part 7: Learning Curve for Polynomial Regression =============
+%%
+fprintf(' =========== Part 7: Learning Curve for Polynomial Regression ============= \n')
 %  Now, you will get to experiment with polynomial regression with multiple
 %  values of lambda. The code below runs polynomial regression with 
 %  lambda = 0. You should try running the code with different values of
@@ -195,7 +197,7 @@ end
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =========== Part 8: Validation for Selecting Lambda =============
+fprintf(' =========== Part 8: Validation for Selecting Lambda ============= \n')
 %  You will now implement validationCurve to test various values of 
 %  lambda on a validation set. You will then use this to select the
 %  "best" lambda value.
@@ -216,5 +218,6 @@ for i = 1:length(lambda_vec)
             lambda_vec(i), error_train(i), error_val(i));
 end
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program completed.')
+##fprintf('Program paused. Press enter to continue.\n');
+##pause;
