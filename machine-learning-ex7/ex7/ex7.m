@@ -21,7 +21,7 @@
 %% Initialization
 clear ; close all; clc
 
-%% ================= Part 1: Find Closest Centroids ====================
+fprintf(" ================= Part 1: Find Closest Centroids ==================== \n")
 %  To help you implement K-Means, we have divided the learning algorithm 
 %  into two functions -- findClosestCentroids and computeCentroids. In this
 %  part, you should complete the code in the findClosestCentroids function. 
