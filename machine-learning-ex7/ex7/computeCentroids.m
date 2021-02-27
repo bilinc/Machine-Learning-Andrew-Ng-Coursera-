@@ -26,7 +26,14 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+for k = 1:K
+  % get a logical array of ones and zeros for centroid of index k
+  % the index for the 1:s corresponds to the x-value that is closest to the centroid
+  logical_array = (idx == k);
+  % picks out the corresponding x-values to centroid k and divides by total number of associated examples
+  centroids(k,:) = sum(X.*logical_array)/nnz(logical_array);    % nnz is a function giving the nonzeros in an array
 
+endfor
 
 
 

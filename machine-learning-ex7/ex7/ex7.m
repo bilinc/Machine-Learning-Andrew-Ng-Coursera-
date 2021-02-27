@@ -44,9 +44,9 @@ fprintf(' %d', idx(1:3));
 fprintf('\n(the closest centroids should be 1, 3, 2 respectively)\n');
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+% pause;
 
-%% ===================== Part 2: Compute Means =========================
+fprintf(" ===================== Part 2: Compute Means ========================= \n")
 %  After implementing the closest centroids function, you should now
 %  complete the computeCentroids function.
 %
@@ -63,10 +63,10 @@ fprintf('   [ 5.813503 2.633656 ]\n');
 fprintf('   [ 7.119387 3.616684 ]\n\n');
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+##pause;
 
 
-%% =================== Part 3: K-Means Clustering ======================
+fprintf(" =================== Part 3: K-Means Clustering ====================== \n")
 %  After you have completed the two functions computeCentroids and
 %  findClosestCentroids, you have all the necessary pieces to run the
 %  kMeans algorithm. In this part, you will run the K-Means algorithm on
