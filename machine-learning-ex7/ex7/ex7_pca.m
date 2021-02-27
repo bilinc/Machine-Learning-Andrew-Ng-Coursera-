@@ -21,7 +21,7 @@
 %% Initialization
 clear ; close all; clc
 
-%% ================== Part 1: Load Example Dataset  ===================
+fprintf(" ================== Part 1: Load Example Dataset  =================== \n")
 %  We start this exercise by using a small dataset that is easily to
 %  visualize
 %
@@ -36,10 +36,10 @@ plot(X(:, 1), X(:, 2), 'bo');
 axis([0.5 6.5 2 8]); axis square;
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+##pause;
 
 
-%% =============== Part 2: Principal Component Analysis ===============
+fprintf(" =============== Part 2: Principal Component Analysis =============== \n")
 %  You should now implement PCA, a dimension reduction technique. You
 %  should complete the code in pca.m
 %
@@ -65,10 +65,10 @@ fprintf(' U(:,1) = %f %f \n', U(1,1), U(2,1));
 fprintf('\n(you should expect to see -0.707107 -0.707107)\n');
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+##pause;
 
 
-%% =================== Part 3: Dimension Reduction ===================
+fprintf(" =================== Part 3: Dimension Reduction =================== ")
 %  You should now implement the projection step to map the data onto the 
 %  first k eigenvectors. The code will then plot the data in this reduced 
 %  dimensional space.  This will show you what the data looks like when 
@@ -103,7 +103,8 @@ hold off
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =============== Part 4: Loading and Visualizing Face Data =============
+
+fprintf(" =============== Part 4: Loading and Visualizing Face Data ============= \n")
 %  We start the exercise by first loading and visualizing the dataset.
 %  The following code will load the dataset into your environment
 %
@@ -118,7 +119,8 @@ displayData(X(1:100, :));
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% =========== Part 5: PCA on Face Data: Eigenfaces  ===================
+
+fprintf(" =========== Part 5: PCA on Face Data: Eigenfaces  =================== \n")
 %  Run PCA and visualize the eigenvectors which are in this case eigenfaces
 %  We display the first 36 eigenfaces.
 %
@@ -139,7 +141,7 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 
-%% ============= Part 6: Dimension Reduction for Faces =================
+fprintf(" ============= Part 6: Dimension Reduction for Faces ================= \n")
 %  Project images to the eigen space using the top k eigenvectors 
 %  If you are applying a machine learning algorithm 
 fprintf('\nDimension reduction for face dataset.\n\n');

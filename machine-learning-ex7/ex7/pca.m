@@ -20,9 +20,12 @@ S = zeros(n);
 %       number of examples).
 %
 
+% Covariance matrix
+Sigma = 1/m * X' * X;
 
-
-
+% U - principal components (eigenvectors)
+% S - diagonal matrix (eigenvalues)
+[U, S, V] = svd(Sigma);
 
 
 
